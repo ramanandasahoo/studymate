@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Business Statistics - StudyMate</title>
+
+    <meta name="description"
+          content="Business Statistics study material, questions and quick revision.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .subject-header {
+            text-align: center;
+            padding: 40px 20px 25px;
+            background: linear-gradient(135deg, #eef2ff, #ffffff);
+        }
+
+        .subject-header .icon {
+            font-size: 55px;
+        }
+
+        .subject-header h1 {
+            margin: 10px 0;
+            font-size: 30px;
+        }
+
+        .subject-header p {
+            color: #6b7280;
+        }
+
+        .topic-grid {
+            max-width: 900px;
+            margin: auto;
+            padding: 25px 15px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .topic-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-decoration: none;
+            color: #1f2937;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .topic-card .icon {
+            font-size: 30px;
+        }
+
+        .topic-card h3 {
+            margin: 8px 0 5px;
+        }
+
+        .topic-card p {
+            color: #6b7280;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .question-section {
+            max-width: 800px;
+            margin: auto;
+            padding: 25px 15px;
+        }
+
+        .question-section h2 {
+            margin-bottom: 18px;
+        }
+
+        .question {
+            background: white;
+            padding: 16px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        .question strong {
+            color: #4f46e5;
+        }
+
+        .answer {
+            margin-top: 8px;
+            color: #4b5563;
+        }
+
+        .back-btn {
+            display: block;
+            width: fit-content;
+            margin: 25px auto;
+            padding: 12px 20px;
+            border-radius: 10px;
+            background: #4f46e5;
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        @media (max-width: 600px) {
+
+            .topic-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        📚 StudyMate
+    </div>
+
+    <button class="menu-btn" onclick="toggleMenu()">
+        ☰
+    </button>
+
+</header>
+
+
+<nav id="navMenu" class="nav-menu">
+
+    <a href="index.html">Home</a>
+
+    <a href="subjects.html">Subjects</a>
+
+    <a href="#questions">Questions</a>
+
+    <a href="#quick-revision">Quick Revision</a>
+
+</nav>
+
+
+<main>
+
+    <!-- Subject Header -->
+
+    <section class="subject-header">
+
+        <div class="icon">📊</div>
+
+        <h1>Business Statistics</h1>
+
+        <p>
+            Learn important concepts and prepare for exams.
+        </p>
+
+    </section>
+
+
+    <!-- Topics -->
+
+    <section>
+
+        <div class="topic-grid">
+
+            <a href="#quick-revision" class="topic-card">
+
+                <div class="icon">📖</div>
+
+                <h3>Quick Revision</h3>
+
+                <p>
+                    Important definitions and formulas.
+                </p>
+
+            </a>
+
+
+            <a href="#two-mark" class="topic-card">
+
+                <div class="icon">✍️</div>
+
+                <h3>2-Mark Questions</h3>
+
+                <p>
+                    Important short-answer questions.
+                </p>
+
+            </a>
+
+
+            <a href="#five-mark" class="topic-card">
+
+                <div class="icon">📝</div>
+
+                <h3>5-Mark Questions</h3>
+
+                <p>
+                    Important descriptive questions.
+                </p>
+
+            </a>
+
+
+            <a href="#quiz" class="topic-card">
+
+                <div class="icon">❓</div>
+
+                <h3>Quick Quiz</h3>
+
+                <p>
+                    Test your knowledge.
+                </p>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Quick Revision -->
+
+    <section id="quick-revision"
+             class="question-section">
+
+        <h2>📖 Quick Revision</h2>
+
+        <div class="question">
+
+            <strong>Statistics</strong>
+
+            <div class="answer">
+                Statistics is the science of collecting,
+                organizing, presenting, analyzing and
+                interpreting data.
+            </div>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>Primary Data</strong>
+
+            <div class="answer">
+                Primary data is data collected directly
+                by the investigator for a specific purpose.
+            </div>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>Secondary Data</strong>
+
+            <div class="answer">
+                Secondary data is data already collected
+                by someone else and used by the investigator.
+            </div>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>Mean</strong>
+
+            <div class="answer">
+                Mean is the arithmetic average of a set
+                of values.
+                <br><br>
+                Formula: Mean = ΣX / N
+            </div>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>Median</strong>
+
+            <div class="answer">
+                Median is the middle value of data arranged
+                in ascending or descending order.
+            </div>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>Mode</strong>
+
+            <div class="answer">
+                Mode is the value that occurs most frequently
+                in a data set.
+            </div>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>Pie Chart</strong>
+
+            <div class="answer">
+                A pie chart is a circular diagram divided
+                into sectors to represent data.
+            </div>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>Tabulation</strong>
+
+            <div class="answer">
+                Tabulation is the systematic presentation
+                of data in rows and columns.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 2 Mark Questions -->
+
+    <section id="two-mark"
+             class="question-section">
+
+        <h2>✍️ Important 2-Mark Questions</h2>
+
+        <div class="question">
+            <strong>1.</strong> Define Statistics.
+        </div>
+
+        <div class="question">
+            <strong>2.</strong> What is Primary Data?
+        </div>
+
+        <div class="question">
+            <strong>3.</strong> What is Secondary Data?
+        </div>
+
+        <div class="question">
+            <strong>4.</strong> What is a Graph?
+        </div>
+
+        <div class="question">
+            <strong>5.</strong> What is a Diagram?
+        </div>
+
+        <div class="question">
+            <strong>6.</strong> What is a Pie Chart?
+        </div>
+
+        <div class="question">
+            <strong>7.</strong> What is Mean or Average?
+        </div>
+
+        <div class="question">
+            <strong>8.</strong> What is Median?
+        </div>
+
+        <div class="question">
+            <strong>9.</strong> What is Mode?
+        </div>
+
+        <div class="question">
+            <strong>10.</strong> What is Tabulation of Data?
+        </div>
+
+    </section>
+
+
+    <!-- 5 Mark Questions -->
+
+    <section id="five-mark"
+             class="question-section">
+
+        <h2>📝 Important 5-Mark Questions</h2>
+
+        <div class="question">
+            <strong>1.</strong>
+            Explain the functions of Statistics.
+        </div>
+
+        <div class="question">
+            <strong>2.</strong>
+            Explain the limitations of Statistics.
+        </div>
+
+        <div class="question">
+            <strong>3.</strong>
+            Explain the characteristics of Statistics.
+        </div>
+
+        <div class="question">
+            <strong>4.</strong>
+            Explain the scope of Statistics.
+        </div>
+
+        <div class="question">
+            <strong>5.</strong>
+            Explain different methods of collecting data.
+        </div>
+
+        <div class="question">
+            <strong>6.</strong>
+            Differentiate between Primary Data and
+            Secondary Data.
+        </div>
+
+        <div class="question">
+            <strong>7.</strong>
+            Explain the characteristics of a good average.
+        </div>
+
+        <div class="question">
+            <strong>8.</strong>
+            Explain the merits and demerits of Arithmetic Mean.
+        </div>
+
+        <div class="question">
+            <strong>9.</strong>
+            Explain the merits and demerits of Median.
+        </div>
+
+        <div class="question">
+            <strong>10.</strong>
+            Explain the merits and demerits of Mode.
+        </div>
+
+        <div class="question">
+            <strong>11.</strong>
+            Explain the methods of classification of data.
+        </div>
+
+    </section>
+
+
+    <!-- Quiz -->
+
+    <section id="quiz"
+             class="question-section">
+
+        <h2>❓ Quick Quiz</h2>
+
+        <div class="quiz-box">
+
+            <p class="question">
+                Which measure represents the most frequently
+                occurring value?
+            </p>
+
+            <button onclick="quizAnswer(false)">
+                Mean
+            </button>
+
+            <button onclick="quizAnswer(false)">
+                Median
+            </button>
+
+            <button onclick="quizAnswer(true)">
+                Mode
+            </button>
+
+            <p id="quizResult"></p>
+
+        </div>
+
+    </section>
+
+
+    <a href="subjects.html" class="back-btn">
+        ← Back to Subjects
+    </a>
+
+</main>
+
+
+<footer>
+
+    <p>© 2026 StudyMate</p>
+
+    <p>Free & Open Source Student Project</p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+
+<script>
+
+function quizAnswer(correct) {
+
+    const result =
+        document.getElementById("quizResult");
+
+    if (correct) {
+
+        result.textContent =
+            "✅ Correct! Mode is the most frequently occurring value.";
+
+        result.style.color = "green";
+
+    } else {
+
+        result.textContent =
+            "❌ Incorrect. Try again!";
+
+        result.style.color = "red";
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>
