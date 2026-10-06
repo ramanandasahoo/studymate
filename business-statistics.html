@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,524 +7,917 @@
     <title>Business Statistics - StudyMate</title>
 
     <meta name="description"
-          content="Business Statistics study material, questions and quick revision.">
+          content="Business Statistics study notes, questions, quiz, flashcards and timer on StudyMate.">
 
     <link rel="stylesheet" href="style.css">
 
     <style>
-
-        .subject-header {
-            text-align: center;
-            padding: 40px 20px 25px;
-            background: linear-gradient(135deg, #eef2ff, #ffffff);
-        }
-
-        .subject-header .icon {
-            font-size: 55px;
-        }
-
-        .subject-header h1 {
-            margin: 10px 0;
-            font-size: 30px;
-        }
-
-        .subject-header p {
-            color: #6b7280;
-        }
-
-        .topic-grid {
-            max-width: 900px;
-            margin: auto;
-            padding: 25px 15px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .topic-card {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            text-decoration: none;
-            color: #1f2937;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-        }
-
-        .topic-card .icon {
-            font-size: 30px;
-        }
-
-        .topic-card h3 {
-            margin: 8px 0 5px;
-        }
-
-        .topic-card p {
-            color: #6b7280;
-            font-size: 14px;
-            margin: 0;
-        }
-
-        .question-section {
-            max-width: 800px;
-            margin: auto;
-            padding: 25px 15px;
-        }
-
-        .question-section h2 {
-            margin-bottom: 18px;
-        }
-
-        .question {
-            background: white;
-            padding: 16px;
-            margin-bottom: 10px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-        }
-
-        .question strong {
-            color: #4f46e5;
-        }
-
-        .answer {
-            margin-top: 8px;
+        .page-desc {
             color: #4b5563;
+            line-height: 1.6;
+            margin-top: 8px;
         }
 
-        .back-btn {
-            display: block;
-            width: fit-content;
-            margin: 25px auto;
-            padding: 12px 20px;
-            border-radius: 10px;
-            background: #4f46e5;
-            color: white;
-            text-decoration: none;
+        details.rev {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 12px;
+        }
+
+        details.rev summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: #1f2937;
+            list-style: none;
+            outline: none;
+        }
+
+        details.rev summary::-webkit-details-marker { display: none; }
+
+        details.rev summary::after {
+            content: "＋";
+            float: right;
             font-weight: 700;
         }
 
-        @media (max-width: 600px) {
+        details.rev[open] summary::after { content: "－"; }
 
-            .topic-grid {
-                grid-template-columns: 1fr;
-            }
-
+        details.rev p {
+            margin: 10px 0 0;
+            color: #4b5563;
+            line-height: 1.6;
         }
 
+        .option-btn {
+            display: block;
+            width: 100%;
+            text-align: left;
+            margin: 8px 0;
+            padding: 12px 14px;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+            background: #ffffff;
+            color: #1f2937;
+            font-size: 1rem;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .option-btn.correct {
+            background: #dcfce7;
+            border-color: #16a34a;
+        }
+
+        .option-btn.wrong {
+            background: #fee2e2;
+            border-color: #dc2626;
+        }
+
+        .option-btn:disabled { cursor: default; }
+
+        .quiz-meta {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+
+        .quiz-actions { margin-top: 12px; }
+
+        .flashcard { cursor: pointer; }
+
+        .back-row {
+            text-align: center;
+            margin: 28px 0;
+        }
+
+        .flashcard-count {
+            text-align: center;
+            color: #4b5563;
+            margin-top: 8px;
+        }
     </style>
 </head>
 
-
 <body>
 
-<header class="header">
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            📚 StudyMate
+        </div>
 
-    <div class="logo">
-        📚 StudyMate
-    </div>
+        <button class="menu-btn" onclick="toggleMenu()">
+            ☰
+        </button>
+    </header>
 
-    <button class="menu-btn" onclick="toggleMenu()">
-        ☰
-    </button>
+    <!-- Navigation -->
+    <nav id="navMenu" class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="subjects.html">Subjects</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#flashcards">Flashcards</a>
+        <a href="#timer">Study Timer</a>
+    </nav>
 
-</header>
+    <main>
 
+        <!-- Page header -->
+        <section class="hero">
+            <div class="hero-icon">📊</div>
 
-<nav id="navMenu" class="nav-menu">
+            <h1>Business Statistics</h1>
 
-    <a href="index.html">Home</a>
-
-    <a href="subjects.html">Subjects</a>
-
-    <a href="#questions">Questions</a>
-
-    <a href="#quick-revision">Quick Revision</a>
-
-</nav>
-
-
-<main>
-
-    <!-- Subject Header -->
-
-    <section class="subject-header">
-
-        <div class="icon">📊</div>
-
-        <h1>Business Statistics</h1>
-
-        <p>
-            Learn important concepts and prepare for exams.
-        </p>
-
-    </section>
+            <p class="page-desc">
+                Revision notes, important questions, quiz, flashcards and a
+                study timer for Business Statistics.
+            </p>
+        </section>
 
 
-    <!-- Topics -->
+        <!-- Quick Revision -->
+        <section class="section">
 
-    <section>
+            <h2>Quick Revision</h2>
 
-        <div class="topic-grid">
-
-            <a href="#quick-revision" class="topic-card">
-
-                <div class="icon">📖</div>
-
-                <h3>Quick Revision</h3>
-
+            <details class="rev">
+                <summary>Definition of Statistics</summary>
                 <p>
-                    Important definitions and formulas.
+                    Statistics is the science of collecting, organizing,
+                    presenting, analyzing and interpreting numerical data in
+                    order to make effective decisions.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>Primary Data</summary>
+                <p>
+                    Primary data is data collected for the first time by the
+                    investigator himself, directly from the original source,
+                    for a specific purpose.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>Secondary Data</summary>
+                <p>
+                    Secondary data is data that has already been collected by
+                    some other person or agency and is reused by the
+                    investigator for his own study.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>Graph</summary>
+                <p>
+                    A graph is a visual representation of numerical data using
+                    lines, bars or curves, which makes comparison and
+                    understanding easier.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>Diagram</summary>
+                <p>
+                    A diagram is a simple pictorial presentation of data using
+                    shapes such as bars, rectangles or circles to show facts
+                    quickly and clearly.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>Pie Chart</summary>
+                <p>
+                    A pie chart is a circular diagram divided into sectors,
+                    where each sector represents the proportion of a component
+                    in the total.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>Mean / Average</summary>
+                <p>
+                    The mean is the sum of all observations divided by the
+                    total number of observations. It is also called the
+                    arithmetic average.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>Median</summary>
+                <p>
+                    The median is the middle value of a series when the data
+                    is arranged in ascending or descending order.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>Mode</summary>
+                <p>
+                    The mode is the value that occurs most frequently in a set
+                    of data. A series may have one mode, more than one mode, or
+                    no mode.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>Tabulation of Data</summary>
+                <p>
+                    Tabulation is the systematic arrangement of collected data
+                    in rows and columns in the form of a table, so that it can
+                    be easily read and analyzed.
+                </p>
+            </details>
+
+        </section>
+
+
+        <!-- 2-Mark Questions -->
+        <section class="section">
+
+            <h2>Important 2-Mark Questions</h2>
+
+            <details class="rev">
+                <summary>1. Define statistics.</summary>
+                <p>
+                    Statistics is the science of collecting, organizing,
+                    presenting, analyzing and interpreting numerical data to
+                    help in decision making.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>2. What is primary data?</summary>
+                <p>
+                    Primary data is data collected for the first time by the
+                    investigator himself directly from the original source for
+                    a specific purpose.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>3. What is secondary data?</summary>
+                <p>
+                    Secondary data is data that has already been collected by
+                    another person or agency and is reused by the investigator
+                    for his own study.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>4. What is a graph?</summary>
+                <p>
+                    A graph is a visual representation of numerical data using
+                    lines, bars or curves to show relationships and trends.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>5. What is a diagram?</summary>
+                <p>
+                    A diagram is a simple pictorial presentation of data using
+                    shapes such as bars, rectangles or circles to present facts
+                    clearly and quickly.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>6. What is a pie chart?</summary>
+                <p>
+                    A pie chart is a circular diagram divided into sectors,
+                    where each sector shows the proportion of a component in
+                    the total.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>7. What is mean / average?</summary>
+                <p>
+                    The mean is the sum of all observations divided by the
+                    total number of observations. It is also called the
+                    arithmetic average.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>8. What is median?</summary>
+                <p>
+                    The median is the middle value of a series when the data
+                    is arranged in ascending or descending order.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>9. What is mode?</summary>
+                <p>
+                    The mode is the value that occurs most frequently in a set
+                    of data.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>10. What is tabulation of data?</summary>
+                <p>
+                    Tabulation is the systematic arrangement of collected data
+                    in rows and columns in the form of a table for easy reading
+                    and analysis.
+                </p>
+            </details>
+
+        </section>
+
+
+        <!-- 5-Mark Questions -->
+        <section class="section">
+
+            <h2>Important 5-Mark Questions</h2>
+
+            <details class="rev">
+                <summary>1. Explain the functions of statistics.</summary>
+                <p>
+                    1. Collection of data – gathering facts and figures.<br>
+                    2. Organization of data – arranging data in a systematic
+                    order.<br>
+                    3. Presentation of data – showing data through tables,
+                    graphs and diagrams.<br>
+                    4. Analysis of data – calculating averages, dispersion and
+                    relationships.<br>
+                    5. Interpretation of data – drawing conclusions.<br>
+                    6. Forecasting – helping to predict future trends.<br>
+                    7. Policy formulation – helping government and business
+                    take decisions.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>2. Explain the limitations of statistics.</summary>
+                <p>
+                    1. Deals only with quantitative data.<br>
+                    2. Does not study individuals – only aggregates.<br>
+                    3. Results are true only on average.<br>
+                    4. Can be misused by wrong presentation.<br>
+                    5. Requires expert knowledge to interpret.<br>
+                    6. Uniformity and homogeneity of data are necessary.<br>
+                    7. Conclusions may be misleading if data is inaccurate.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>3. Explain the characteristics of statistics.</summary>
+                <p>
+                    1. It is a science as well as an art.<br>
+                    2. It deals with aggregates of facts, not individuals.<br>
+                    3. Data must be numerically expressed.<br>
+                    4. Data must be collected systematically.<br>
+                    5. Data must be comparable.<br>
+                    6. Results are affected by a large number of causes.<br>
+                    7. It helps in drawing rational conclusions.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>4. Explain the scope of statistics.</summary>
+                <p>
+                    1. Economics – measuring national income, demand, supply.<br>
+                    2. Business – sales, production, marketing research.<br>
+                    3. Commerce – accounting, banking, insurance.<br>
+                    4. Industry – quality control, production planning.<br>
+                    5. Government – taxation, population, planning.<br>
+                    6. Social sciences – sociology, psychology, education.<br>
+                    7. Science and research – experiments and testing.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>5. Explain different methods of statistics.</summary>
+                <p>
+                    1. Collection of data – primary and secondary methods.<br>
+                    2. Organization – classification and tabulation.<br>
+                    3. Presentation – graphs, diagrams, tables.<br>
+                    4. Analysis – measures of central tendency, dispersion,
+                    correlation, regression.<br>
+                    5. Interpretation – meaning and conclusion of results.<br>
+                    6. Forecasting – estimating future values using trends.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>6. Differentiate between primary data and secondary data.</summary>
+                <p>
+                    Primary data:<br>
+                    – Collected for the first time.<br>
+                    – Collected by the investigator himself.<br>
+                    – Original in nature.<br>
+                    – More reliable but costly and time-consuming.<br><br>
+                    Secondary data:<br>
+                    – Already collected by someone else.<br>
+                    – Obtained from published or unpublished sources.<br>
+                    – Not original in nature.<br>
+                    – Less costly, quicker, but may be less reliable.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>7. Explain the characteristics of a good average.</summary>
+                <p>
+                    1. It should be easy to understand and calculate.<br>
+                    2. It should be based on all observations.<br>
+                    3. It should be rigidly defined by a formula.<br>
+                    4. It should be suitable for further algebraic treatment.<br>
+                    5. It should not be much affected by extreme values.<br>
+                    6. It should be capable of being used for comparison.<br>
+                    7. It should be stable from sample to sample.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>8. Explain the merits and demerits of arithmetic mean.</summary>
+                <p>
+                    Merits:<br>
+                    – Easy to understand and calculate.<br>
+                    – Based on all observations.<br>
+                    – Rigidly defined.<br>
+                    – Suitable for algebraic treatment.<br><br>
+                    Demerits:<br>
+                    – Affected by extreme values.<br>
+                    – Cannot be calculated for open-end classes.<br>
+                    – Cannot be located by inspection.<br>
+                    – May give misleading results for skewed data.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>9. Explain the merits and demerits of median.</summary>
+                <p>
+                    Merits:<br>
+                    – Easy to understand.<br>
+                    – Not affected by extreme values.<br>
+                    – Can be used for open-end classes.<br>
+                    – Can be located by inspection.<br><br>
+                    Demerits:<br>
+                    – Not based on all observations.<br>
+                    – Not suitable for algebraic treatment.<br>
+                    – Requires data to be arranged in order.<br>
+                    – Less stable for small samples.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>10. Explain the merits and demerits of mode.</summary>
+                <p>
+                    Merits:<br>
+                    – Easy to understand.<br>
+                    – Not affected by extreme values.<br>
+                    – Useful for qualitative data.<br>
+                    – Can be found by inspection.<br><br>
+                    Demerits:<br>
+                    – Not based on all observations.<br>
+                    – Not suitable for algebraic treatment.<br>
+                    – A series may have more than one mode or no mode.<br>
+                    – Ill-defined in some cases.
+                </p>
+            </details>
+
+            <details class="rev">
+                <summary>11. Explain the methods of classification of data.</summary>
+                <p>
+                    1. Geographical classification – based on place or area.<br>
+                    2. Chronological classification – based on time.<br>
+                    3. Qualitative classification – based on attributes such as
+                    gender, religion, occupation.<br>
+                    4. Quantitative classification – based on numerical values
+                    such as marks, income, age.<br>
+                    5. Discrete and continuous classification – based on the
+                    nature of the variable.
+                </p>
+            </details>
+
+        </section>
+
+
+        <!-- Interactive Quiz -->
+        <section id="quiz" class="section">
+
+            <h2>Interactive Quiz</h2>
+
+            <div class="quiz-box">
+
+                <p class="quiz-meta" id="quizProgress">Question 1 of 10</p>
+
+                <p class="question" id="quizQuestion">
+                    Loading question...
                 </p>
 
-            </a>
+                <div id="quizOptions"></div>
 
+                <p id="quizResult"></p>
 
-            <a href="#two-mark" class="topic-card">
+                <div class="quiz-actions">
+                    <button id="nextBtn" onclick="nextQuestion()">
+                        Next →
+                    </button>
+                </div>
 
-                <div class="icon">✍️</div>
+                <div class="quiz-actions">
+                    <button id="restartBtn" onclick="restartQuiz()" style="display:none;">
+                        ↻ Restart Quiz
+                    </button>
+                </div>
 
-                <h3>2-Mark Questions</h3>
-
-                <p>
-                    Important short-answer questions.
-                </p>
-
-            </a>
-
-
-            <a href="#five-mark" class="topic-card">
-
-                <div class="icon">📝</div>
-
-                <h3>5-Mark Questions</h3>
-
-                <p>
-                    Important descriptive questions.
-                </p>
-
-            </a>
-
-
-            <a href="#quiz" class="topic-card">
-
-                <div class="icon">❓</div>
-
-                <h3>Quick Quiz</h3>
-
-                <p>
-                    Test your knowledge.
-                </p>
-
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- Quick Revision -->
-
-    <section id="quick-revision"
-             class="question-section">
-
-        <h2>📖 Quick Revision</h2>
-
-        <div class="question">
-
-            <strong>Statistics</strong>
-
-            <div class="answer">
-                Statistics is the science of collecting,
-                organizing, presenting, analyzing and
-                interpreting data.
             </div>
 
-        </div>
+        </section>
 
 
-        <div class="question">
+        <!-- Flashcards -->
+        <section id="flashcards" class="section">
 
-            <strong>Primary Data</strong>
+            <h2>Flashcards</h2>
 
-            <div class="answer">
-                Primary data is data collected directly
-                by the investigator for a specific purpose.
+            <div class="flashcard" onclick="flipFlashcard()">
+                <div id="flashcardText">
+                    Tap to start
+                </div>
             </div>
 
-        </div>
+            <p class="flashcard-count" id="flashcardCount">Card 1 of 10</p>
 
-
-        <div class="question">
-
-            <strong>Secondary Data</strong>
-
-            <div class="answer">
-                Secondary data is data already collected
-                by someone else and used by the investigator.
+            <div class="quiz-actions" style="text-align:center;">
+                <button onclick="nextFlashcard()">
+                    Next Flashcard →
+                </button>
             </div>
 
-        </div>
-
-
-        <div class="question">
-
-            <strong>Mean</strong>
-
-            <div class="answer">
-                Mean is the arithmetic average of a set
-                of values.
-                <br><br>
-                Formula: Mean = ΣX / N
-            </div>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>Median</strong>
-
-            <div class="answer">
-                Median is the middle value of data arranged
-                in ascending or descending order.
-            </div>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>Mode</strong>
-
-            <div class="answer">
-                Mode is the value that occurs most frequently
-                in a data set.
-            </div>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>Pie Chart</strong>
-
-            <div class="answer">
-                A pie chart is a circular diagram divided
-                into sectors to represent data.
-            </div>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>Tabulation</strong>
-
-            <div class="answer">
-                Tabulation is the systematic presentation
-                of data in rows and columns.
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- 2 Mark Questions -->
-
-    <section id="two-mark"
-             class="question-section">
-
-        <h2>✍️ Important 2-Mark Questions</h2>
-
-        <div class="question">
-            <strong>1.</strong> Define Statistics.
-        </div>
-
-        <div class="question">
-            <strong>2.</strong> What is Primary Data?
-        </div>
-
-        <div class="question">
-            <strong>3.</strong> What is Secondary Data?
-        </div>
-
-        <div class="question">
-            <strong>4.</strong> What is a Graph?
-        </div>
-
-        <div class="question">
-            <strong>5.</strong> What is a Diagram?
-        </div>
-
-        <div class="question">
-            <strong>6.</strong> What is a Pie Chart?
-        </div>
-
-        <div class="question">
-            <strong>7.</strong> What is Mean or Average?
-        </div>
-
-        <div class="question">
-            <strong>8.</strong> What is Median?
-        </div>
-
-        <div class="question">
-            <strong>9.</strong> What is Mode?
-        </div>
-
-        <div class="question">
-            <strong>10.</strong> What is Tabulation of Data?
-        </div>
-
-    </section>
-
-
-    <!-- 5 Mark Questions -->
-
-    <section id="five-mark"
-             class="question-section">
-
-        <h2>📝 Important 5-Mark Questions</h2>
-
-        <div class="question">
-            <strong>1.</strong>
-            Explain the functions of Statistics.
-        </div>
-
-        <div class="question">
-            <strong>2.</strong>
-            Explain the limitations of Statistics.
-        </div>
-
-        <div class="question">
-            <strong>3.</strong>
-            Explain the characteristics of Statistics.
-        </div>
-
-        <div class="question">
-            <strong>4.</strong>
-            Explain the scope of Statistics.
-        </div>
-
-        <div class="question">
-            <strong>5.</strong>
-            Explain different methods of collecting data.
-        </div>
-
-        <div class="question">
-            <strong>6.</strong>
-            Differentiate between Primary Data and
-            Secondary Data.
-        </div>
-
-        <div class="question">
-            <strong>7.</strong>
-            Explain the characteristics of a good average.
-        </div>
-
-        <div class="question">
-            <strong>8.</strong>
-            Explain the merits and demerits of Arithmetic Mean.
-        </div>
-
-        <div class="question">
-            <strong>9.</strong>
-            Explain the merits and demerits of Median.
-        </div>
-
-        <div class="question">
-            <strong>10.</strong>
-            Explain the merits and demerits of Mode.
-        </div>
-
-        <div class="question">
-            <strong>11.</strong>
-            Explain the methods of classification of data.
-        </div>
-
-    </section>
-
-
-    <!-- Quiz -->
-
-    <section id="quiz"
-             class="question-section">
-
-        <h2>❓ Quick Quiz</h2>
-
-        <div class="quiz-box">
-
-            <p class="question">
-                Which measure represents the most frequently
-                occurring value?
+            <p class="hint">
+                Tap the card to reveal the answer.
             </p>
 
-            <button onclick="quizAnswer(false)">
-                Mean
-            </button>
+        </section>
 
-            <button onclick="quizAnswer(false)">
-                Median
-            </button>
 
-            <button onclick="quizAnswer(true)">
-                Mode
-            </button>
+        <!-- Study Timer -->
+        <section id="timer" class="section">
 
-            <p id="quizResult"></p>
+            <h2>Study Timer</h2>
 
+            <div class="timer">
+
+                <div id="timerDisplay">
+                    25:00
+                </div>
+
+                <button onclick="startTimer()">
+                    ▶ Start
+                </button>
+
+                <button onclick="resetTimer()">
+                    ↻ Reset
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Back to Subjects -->
+        <div class="back-row">
+            <a href="subjects.html" class="primary-btn">
+                ← Back to Subjects
+            </a>
         </div>
 
-    </section>
+    </main>
 
 
-    <a href="subjects.html" class="back-btn">
-        ← Back to Subjects
-    </a>
+    <!-- Footer -->
+    <footer>
 
-</main>
+        <p>
+            © 2026 StudyMate
+        </p>
 
+        <p>
+            Free &amp; Open Source Student Project
+        </p>
 
-<footer>
-
-    <p>© 2026 StudyMate</p>
-
-    <p>Free & Open Source Student Project</p>
-
-</footer>
+    </footer>
 
 
-<script src="script.js"></script>
+    <script>
+        /* ---------------- Menu toggle ---------------- */
+        function toggleMenu() {
+            var nav = document.getElementById("navMenu");
+            if (nav) {
+                nav.classList.toggle("active");
+            }
+        }
 
+        /* ---------------- Quiz ---------------- */
+        var quizData = [
+            {
+                q: "What is the process of collecting, organizing, analyzing and interpreting data?",
+                options: ["Accounting", "Statistics", "Marketing", "Management"],
+                answer: 1
+            },
+            {
+                q: "Data collected for the first time by the investigator is called:",
+                options: ["Secondary data", "Primary data", "Grouped data", "Sampling data"],
+                answer: 1
+            },
+            {
+                q: "Which of the following is a measure of central tendency?",
+                options: ["Range", "Variance", "Mean", "Standard deviation"],
+                answer: 2
+            },
+            {
+                q: "The middle value of data arranged in order is called:",
+                options: ["Mode", "Mean", "Median", "Range"],
+                answer: 2
+            },
+            {
+                q: "The value that occurs most frequently in a set of data is:",
+                options: ["Mean", "Median", "Mode", "Average"],
+                answer: 2
+            },
+            {
+                q: "A pie chart is divided into:",
+                options: ["Bars", "Sectors", "Lines", "Dots"],
+                answer: 1
+            },
+            {
+                q: "Secondary data is:",
+                options: [
+                    "Collected by the investigator himself",
+                    "Already collected by someone else",
+                    "Always more accurate than primary data",
+                    "Never useful in research"
+                ],
+                answer: 1
+            },
+            {
+                q: "Tabulation of data means:",
+                options: [
+                    "Collecting data from the field",
+                    "Arranging data in rows and columns",
+                    "Drawing graphs",
+                    "Selecting a sample"
+                ],
+                answer: 1
+            },
+            {
+                q: "Which average is most affected by extreme values?",
+                options: ["Median", "Mode", "Arithmetic mean", "Quartile"],
+                answer: 2
+            },
+            {
+                q: "A graph is a:",
+                options: [
+                    "Numerical table",
+                    "Visual representation of data",
+                    "Questionnaire",
+                    "Sample of data"
+                ],
+                answer: 1
+            }
+        ];
 
-<script>
+        var currentQuestion = 0;
+        var score = 0;
+        var answered = false;
 
-function quizAnswer(correct) {
+        function loadQuestion() {
+            var data = quizData[currentQuestion];
 
-    const result =
-        document.getElementById("quizResult");
+            document.getElementById("quizProgress").textContent =
+                "Question " + (currentQuestion + 1) + " of " + quizData.length;
 
-    if (correct) {
+            document.getElementById("quizQuestion").textContent = data.q;
+            document.getElementById("quizResult").textContent = "";
 
-        result.textContent =
-            "✅ Correct! Mode is the most frequently occurring value.";
+            var optionsBox = document.getElementById("quizOptions");
+            optionsBox.innerHTML = "";
 
-        result.style.color = "green";
+            for (var i = 0; i < data.options.length; i++) {
+                var btn = document.createElement("button");
+                btn.className = "option-btn";
+                btn.type = "button";
+                btn.textContent = data.options[i];
+                btn.setAttribute("data-index", i);
+                btn.onclick = function () {
+                    selectOption(this);
+                };
+                optionsBox.appendChild(btn);
+            }
 
-    } else {
+            answered = false;
 
-        result.textContent =
-            "❌ Incorrect. Try again!";
+            var nextBtn = document.getElementById("nextBtn");
+            nextBtn.textContent =
+                (currentQuestion === quizData.length - 1) ? "Finish" : "Next →";
+        }
 
-        result.style.color = "red";
+        function selectOption(btn) {
+            if (answered) return;
+            answered = true;
 
-    }
+            var selected = parseInt(btn.getAttribute("data-index"), 10);
+            var correct = quizData[currentQuestion].answer;
 
-}
+            var all = document.querySelectorAll("#quizOptions .option-btn");
 
-</script>
+            for (var i = 0; i < all.length; i++) {
+                all[i].disabled = true;
+                var idx = parseInt(all[i].getAttribute("data-index"), 10);
+                if (idx === correct) {
+                    all[i].classList.add("correct");
+                }
+                if (idx === selected && selected !== correct) {
+                    all[i].classList.add("wrong");
+                }
+            }
+
+            if (selected === correct) {
+                score++;
+                document.getElementById("quizResult").textContent = "✅ Correct!";
+            } else {
+                document.getElementById("quizResult").textContent =
+                    "❌ Wrong. Correct answer: " + quizData[currentQuestion].options[correct];
+            }
+        }
+
+        function nextQuestion() {
+            if (!answered) {
+                document.getElementById("quizResult").textContent =
+                    "Please select an option first.";
+                return;
+            }
+
+            if (currentQuestion < quizData.length - 1) {
+                currentQuestion++;
+                loadQuestion();
+            } else {
+                showFinalScore();
+            }
+        }
+
+        function showFinalScore() {
+            document.getElementById("quizProgress").textContent = "Quiz Completed";
+
+            document.getElementById("quizQuestion").textContent =
+                "Your Score: " + score + " / " + quizData.length;
+
+            document.getElementById("quizOptions").innerHTML = "";
+
+            var msg = "";
+            if (score === quizData.length) {
+                msg = "🏆 Excellent! Perfect score!";
+            } else if (score >= 7) {
+                msg = "👍 Good job! Keep revising.";
+            } else if (score >= 4) {
+                msg = "📖 Not bad. Revise the notes again.";
+            } else {
+                msg = "💪 Keep practicing. You can do better!";
+            }
+
+            document.getElementById("quizResult").textContent = msg;
+
+            document.getElementById("nextBtn").style.display = "none";
+            document.getElementById("restartBtn").style.display = "inline-block";
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            answered = false;
+
+            document.getElementById("nextBtn").style.display = "inline-block";
+            document.getElementById("restartBtn").style.display = "none";
+
+            loadQuestion();
+        }
+
+        /* ---------------- Flashcards ---------------- */
+        var flashcards = [
+            {
+                q: "Define statistics.",
+                a: "Statistics is the science of collecting, organizing, presenting, analyzing and interpreting numerical data."
+            },
+            {
+                q: "What is primary data?",
+                a: "Data collected for the first time by the investigator himself directly from the original source."
+            },
+            {
+                q: "What is secondary data?",
+                a: "Data already collected by someone else and reused by the investigator for his own study."
+            },
+            {
+                q: "What is a graph?",
+                a: "A visual representation of numerical data using lines, bars or curves."
+            },
+            {
+                q: "What is a diagram?",
+                a: "A simple pictorial presentation of data using shapes such as bars, rectangles or circles."
+            },
+            {
+                q: "What is a pie chart?",
+                a: "A circular diagram divided into sectors, each sector showing the proportion of a component in the total."
+            },
+            {
+                q: "What is mean / average?",
+                a: "The sum of all observations divided by the total number of observations."
+            },
+            {
+                q: "What is median?",
+                a: "The middle value of a series when the data is arranged in ascending or descending order."
+            },
+            {
+                q: "What is mode?",
+                a: "The value that occurs most frequently in a set of data."
+            },
+            {
+                q: "What is tabulation of data?",
+                a: "The systematic arrangement of collected data in rows and columns in the form of a table."
+            }
+        ];
+
+        var flashIndex = 0;
+        var flashFlipped = false;
+
+        function renderFlashcard() {
+            var card = document.getElementById("flashcardText");
+            var cardBox = document.querySelector(".flashcard");
+
+            if (flashFlipped) {
+                card.textContent = flashcards[flashIndex].a;
+                if (cardBox) {
+                    cardBox.style.background = "#eef2ff";
+                    cardBox.style.color = "#1f2937";
+                }
+            } else {
+                card.textContent = flashcards[flashIndex].q;
+                if (cardBox) {
+                    cardBox.style.background = "";
+                    cardBox.style.color = "";
+                }
+            }
+
+            document.getElementById("flashcardCount").textContent =
+                "Card " + (flashIndex + 1) + " of " + flashcards.length;
+        }
+
+        function flipFlashcard() {
+            flashFlipped = !flashFlipped;
+            renderFlashcard();
+        }
+
+        function nextFlashcard() {
+            flashIndex = (flashIndex + 1) % flashcards.length;
+            flashFlipped = false;
+            renderFlashcard();
+        }
+
+        /* ---------------- Study Timer ---------------- */
+        var timerSeconds = 25 * 60;
+        var timerInterval = null;
+
+        function updateTimerDisplay() {
+            var m = Math.floor(timerSeconds / 60);
+            var s = timerSeconds % 60;
+            document.getElementById("timerDisplay").textContent =
+                (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+        }
+
+        function startTimer() {
+            if (timerInterval) return;
+
+            timerInterval = setInterval(function () {
+                if (timerSeconds > 0) {
+                    timerSeconds--;
+                    updateTimerDisplay();
+                } else {
+                    clearInterval(timerInterval);
+                    timerInterval = null;
+                    alert("Time's up! Take a short break.");
+                }
+            }, 1000);
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            timerSeconds = 25 * 60;
+            updateTimerDisplay();
+        }
+
+        /* ---------------- Init ---------------- */
+        document.addEventListener("DOMContentLoaded", function () {
+            loadQuestion();
+            renderFlashcard();
+            updateTimerDisplay();
+        });
+    </script>
 
 </body>
-
 </html>
