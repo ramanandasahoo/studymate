@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyMate - Student Study Assistant</title>
+
+    <meta name="description"
+          content="StudyMate is a free mobile-friendly study assistant for students.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            📚 StudyMate
+        </div>
+
+        <button class="menu-btn" onclick="toggleMenu()">
+            ☰
+        </button>
+    </header>
+
+    <!-- Navigation -->
+    <nav id="navMenu" class="nav-menu">
+        <a href="#home">Home</a>
+        <a href="#subjects">Subjects</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#flashcards">Flashcards</a>
+        <a href="#timer">Study Timer</a>
+    </nav>
+
+    <!-- Hero -->
+    <main>
+
+        <section id="home" class="hero">
+
+            <div class="hero-icon">
+                📖
+            </div>
+
+            <h1>Study Smarter with StudyMate</h1>
+
+            <p>
+                A simple and free study assistant designed for students.
+            </p>
+
+            <a href="#subjects" class="primary-btn">
+                Start Studying →
+            </a>
+
+        </section>
+
+
+        <!-- Features -->
+        <section class="section">
+
+            <h2>What can you do?</h2>
+
+            <div class="features">
+
+                <div class="card">
+                    <div class="card-icon">📚</div>
+                    <h3>Subjects</h3>
+                    <p>Organize and access your study subjects.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">❓</div>
+                    <h3>Quiz</h3>
+                    <p>Test your knowledge with quick quizzes.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🧠</div>
+                    <h3>Flashcards</h3>
+                    <p>Learn important concepts using flashcards.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">⏱️</div>
+                    <h3>Study Timer</h3>
+                    <p>Use a timer to stay focused while studying.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Subjects -->
+        <section id="subjects" class="section">
+
+            <h2>My Subjects</h2>
+
+            <div class="subjects">
+
+                <button class="subject-card">
+                    📊
+                    <span>Business Statistics</span>
+                </button>
+
+                <button class="subject-card">
+                    💰
+                    <span>Management Accounting</span>
+                </button>
+
+                <button class="subject-card">
+                    ⚖️
+                    <span>Business Regulatory Framework</span>
+                </button>
+
+                <button class="subject-card">
+                    🏦
+                    <span>Financial Markets</span>
+                </button>
+
+                <button class="subject-card">
+                    🌐
+                    <span>E-Commerce</span>
+                </button>
+
+                <button class="subject-card">
+                    💻
+                    <span>Office Automation</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Quiz -->
+        <section id="quiz" class="section">
+
+            <h2>Quick Quiz</h2>
+
+            <div class="quiz-box">
+
+                <p class="question">
+                    What is the process of collecting,
+                    organizing, analyzing and interpreting data?
+                </p>
+
+                <button onclick="checkAnswer(this, false)">
+                    Accounting
+                </button>
+
+                <button onclick="checkAnswer(this, true)">
+                    Statistics
+                </button>
+
+                <button onclick="checkAnswer(this, false)">
+                    Marketing
+                </button>
+
+                <p id="quizResult"></p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Flashcards -->
+        <section id="flashcards" class="section">
+
+            <h2>Flashcard</h2>
+
+            <div class="flashcard" onclick="flipCard()">
+
+                <div id="flashcardText">
+                    What is Statistics?
+                </div>
+
+            </div>
+
+            <p class="hint">
+                Tap the card to reveal the answer.
+            </p>
+
+        </section>
+
+
+        <!-- Timer -->
+        <section id="timer" class="section">
+
+            <h2>Study Timer</h2>
+
+            <div class="timer">
+
+                <div id="timerDisplay">
+                    25:00
+                </div>
+
+                <button onclick="startTimer()">
+                    ▶ Start
+                </button>
+
+                <button onclick="resetTimer()">
+                    ↻ Reset
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 StudyMate
+        </p>
+
+        <p>
+            Free & Open Source Student Project
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
