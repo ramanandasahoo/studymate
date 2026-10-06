@@ -274,25 +274,20 @@ footer {
         padding: 35px 15px;
     }
 }
-/* Remove default underline from clickable cards */
-.card {
-    text-decoration: none;
-    color: inherit;
+a.card,
+a.card:link,
+a.card:visited,
+a.card:hover,
+a.card:active {
+    text-decoration: none !important;
+    color: inherit !important;
 }
 
-.subject-card {
-    display: block;
-    text-decoration: none;
-    color: #1f2937;
-}
-
-.card:visited,
-.subject-card:visited {
-    color: inherit;
-    text-decoration: none;
-}
-
-.card:hover,
-.subject-card:hover {
-    text-decoration: none;
+a.subject-card,
+a.subject-card:link,
+a.subject-card:visited,
+a.subject-card:hover,
+a.subject-card:active {
+    text-decoration: none !important;
+    color: #1f2937 !important;
 }
