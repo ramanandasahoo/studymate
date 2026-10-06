@@ -274,3 +274,25 @@ footer {
         padding: 35px 15px;
     }
 }
+/* Remove default underline from clickable cards */
+.card {
+    text-decoration: none;
+    color: inherit;
+}
+
+.subject-card {
+    display: block;
+    text-decoration: none;
+    color: #1f2937;
+}
+
+.card:visited,
+.subject-card:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+.card:hover,
+.subject-card:hover {
+    text-decoration: none;
+}
