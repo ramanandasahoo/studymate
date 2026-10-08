@@ -6,4 +6,4 @@ Diploma in Modern Office Management study platform.
 
 ## 🚀 Live Demo
 
-👉 [View StudyMate Live Demo](https://YOUR-USERNAME.github.io/REPOSITORY-NAME/)
+👉 [View StudyMate Live Demo](https://ramanandasahoo.github.io/studymate/)
